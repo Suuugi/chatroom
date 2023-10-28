@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flask Chatroom</title>
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='js/client.js') }}" defer></script>
+  </head>
+  <body class="webpage">
+    <form>
+      <input type="button" value="Click Me" onclick="buttonClicked()">
+    </form>
+  </body>
+</html>
