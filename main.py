@@ -8,5 +8,15 @@ sio = SocketIO(app)
 def index():
     return render_template('index.html')
 
+@sio.on('connect')
+def handle_connect():
+   print('User connected to server')
+   emit('connected', broadcast=True)
+
+@sio.on('disconnect')
+def handle_disconnect():
+   print('User disconnected from server')
+   emit('disconnected', broadcast=True)
+
 if __name__ == '__main__':
   sio.run(app)
