@@ -7,11 +7,16 @@
     <script src="{{ url_for('static', filename='js/client.js') }}" defer></script>
   </head>
   <body class="webpage">
-    <h1>Flask Chatroom</h1>
-    <form>
-      <input type="text" id="message" placeholder="Write a message...">
-      <input type="button" value="Click Me" onclick="sendMessage()">
-    </form>
-    <ul id="chatwindow" class="chatwindow"></ul>
+    <header><h1>Flask Chatroom</h1></header>
+
+    <main>
+      <form>
+        <input type="text" id="message" placeholder="Write a message...">
+        <input type="button" value="Click Me" onclick="sendMessage()">
+        <ul id="chatwindow" class="chatwindow"></ul>
+      </form>
+    </main>
+
+    <footer></footer>
   </body>
 </html>
