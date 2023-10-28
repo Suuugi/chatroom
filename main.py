@@ -10,12 +10,17 @@ def index():
 
 @sio.on('connect')
 def handle_connect():
-   print('User connected to server')
+   print('Client user connected to server')
    emit('connected', broadcast=True)
+
+@sio.on('message')
+def handle_message(message):
+   print('Client user sent message to server: ', message)
+   emit('messaged', message, broadcast=True)
 
 @sio.on('disconnect')
 def handle_disconnect():
-   print('User disconnected from server')
+   print('Client user disconnected from server')
    emit('disconnected', broadcast=True)
 
 if __name__ == '__main__':
