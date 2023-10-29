@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.webpage {
+  background-color: #FFFDD0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.chatwindow {
+  min-width: 100vw;
+  max-width: 100vw;
+  min-height: 80vh;
+  max-height: 80vh;
+  border-color: black; 
+  border-width:1px; 
+  border-style: solid; 
+  overflow: scroll; 
+  overflow-x: hidden;
+  word-wrap: break-word;
+  list-style-type: none;
+  padding-left: 1em;
+}
