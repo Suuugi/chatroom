@@ -9,7 +9,9 @@ sio.on('connected', () => {
 
 function sendMessage() {
   var message = document.getElementById('message').value
-  sio.emit('message', message)
+  if (message != "") {
+    sio.emit('message', message)
+  }
 
   document.getElementById('message').value = ""
 }

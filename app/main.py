@@ -15,8 +15,9 @@ def handle_connect():
 
 @sio.on('message')
 def handle_message(message):
-   print('Client user sent message to server: ', message)
-   emit('messaged', message, broadcast=True)
+   if (message != ""):
+      print('Client user sent message to server: ', message)
+      emit('messaged', message, broadcast=True)
 
 @sio.on('disconnect')
 def handle_disconnect():
