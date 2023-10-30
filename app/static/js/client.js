@@ -2,17 +2,28 @@ const sio = io()
 
 const ul = document.getElementById('chatwindow')
 
-
 sio.on('connected', () => {
   console.log('Client user connected to server')
 })
 
-function sendMessage() {
-  var message = document.getElementById('message').value
-  sio.emit('message', message)
+function login() {
+  var message = document.getElementById('login').value
+  if (message != "") {
+    sio.emit('login', message)
+  }
 
   document.getElementById('message').value = ""
 }
+
+function sendMessage() {
+  var message = document.getElementById('message').value
+  if (message != "") {
+    sio.emit('message', message)
+  }
+
+  document.getElementById('message').value = ""
+}
+
 sio.on('messaged', (message) => {
   var li = document.createElement("li")
 
